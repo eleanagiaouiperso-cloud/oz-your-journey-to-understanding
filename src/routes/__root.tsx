@@ -29,14 +29,13 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Oz — Un parcours pour se préparer face à l'antisémitisme" },
+      { name: "description", content: "Oz est un parcours d'engagement de 10 mois autour de 4 piliers : Connaître, Transmettre, Secourir, Défendre." },
+      { name: "author", content: "Oz — un projet de Moadon" },
+      { property: "og:title", content: "Oz — Se préparer face à l'antisémitisme" },
+      { property: "og:description", content: "Un parcours d'engagement de 10 mois. Promo Aleph — Paris, mai 2026." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
