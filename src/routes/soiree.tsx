@@ -43,7 +43,7 @@ function SoireePage() {
           <div className="oz-container text-center">
             <h1 className="text-3xl mb-4">Merci !</h1>
             <p>On garde le contact. À très vite.</p>
-            <Link to="/" className="oz-btn oz-btn--ghost mt-8">Retour à l'accueil</Link>
+            <Link to="/" className="oz-btn oz-btn--outline mt-8">Retour à l'accueil</Link>
           </div>
         </section>
       </Layout>
@@ -54,7 +54,7 @@ function SoireePage() {
     <Layout>
       <section className="oz-section">
         <div className="oz-container">
-          <Link to="/" className="text-xs uppercase tracking-widest text-muted-foreground hover:text-[var(--oz-navy)]">← Retour</Link>
+          <Link to="/" className="text-xs uppercase tracking-widest text-muted-foreground hover:text-[var(--oz-orange)]">← Retour</Link>
           <h1 className="text-3xl mt-4 mb-2">J'étais à la soirée de lancement</h1>
           <p className="text-foreground/80 mb-8">Laisse-nous tes coordonnées pour rester en contact.</p>
 
@@ -67,7 +67,7 @@ function SoireePage() {
             <label className="flex items-start gap-3 mb-6 text-sm">
               <input type="checkbox" name="rgpd" className="mt-1" />
               <span>J'accepte que mes données soient traitées pour rester en contact avec Oz.
-                {errors.rgpd && <span className="block text-[var(--oz-red)] text-xs mt-1">{errors.rgpd}</span>}
+                {errors.rgpd && <span className="block text-[var(--pilier-secourir)] text-xs mt-1">{errors.rgpd}</span>}
               </span>
             </label>
 

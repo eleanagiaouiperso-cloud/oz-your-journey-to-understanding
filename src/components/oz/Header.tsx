@@ -2,18 +2,17 @@ import { Link } from "@tanstack/react-router";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-[var(--oz-cream)]/90 backdrop-blur border-b border-border">
-      <div className="oz-container flex items-center justify-between h-14">
-        <Link to="/" aria-label="Oz — accueil" className="oz-logo text-3xl">
-          OZ
+    <header className="sticky top-0 z-40 bg-[var(--oz-bordeaux)] text-white">
+      <div className="oz-container flex items-center justify-between" style={{ height: 56 }}>
+        <Link to="/" aria-label="Oz — accueil" className="oz-logo" style={{ fontSize: 32, color: "var(--oz-orange)" }}>
+          OZ!
         </Link>
-        <a
-          href="#"
-          className="text-xs uppercase tracking-widest text-muted-foreground hover:text-[var(--oz-navy)] font-display"
-          style={{ fontFamily: "var(--font-display)", letterSpacing: "0.12em" }}
+        <span
+          className="oz-hand"
+          style={{ fontSize: 16, color: "var(--oz-orange-soft)", transform: "rotate(-2deg)" }}
         >
-          Mon espace
-        </a>
+          être prêt.
+        </span>
       </div>
     </header>
   );

@@ -46,7 +46,7 @@ function CreateurPage() {
           <div className="oz-container text-center">
             <h1 className="text-3xl mb-4">Merci !</h1>
             <p>Ta candidature a bien été reçue. On revient vers toi sous 7 jours.</p>
-            <Link to="/" className="oz-btn oz-btn--ghost mt-8">Retour à l'accueil</Link>
+            <Link to="/" className="oz-btn oz-btn--outline mt-8">Retour à l'accueil</Link>
           </div>
         </section>
       </Layout>
@@ -57,7 +57,7 @@ function CreateurPage() {
     <Layout>
       <section className="oz-section">
         <div className="oz-container">
-          <Link to="/" className="text-xs uppercase tracking-widest text-muted-foreground hover:text-[var(--oz-navy)]">← Retour</Link>
+          <Link to="/" className="text-xs uppercase tracking-widest text-muted-foreground hover:text-[var(--oz-orange)]">← Retour</Link>
           <h1 className="text-3xl mt-4 mb-2">Créer un Oz</h1>
           <p className="text-foreground/80 mb-8">
             Tu veux créer un Oz dans ta ville, ton mouvement de jeunesse ou ton réseau ? Postule ici.
@@ -91,7 +91,7 @@ function CreateurPage() {
             <label className="flex items-start gap-3 mb-6 text-sm">
               <input type="checkbox" name="rgpd" className="mt-1" />
               <span>J'accepte que mes données soient traitées dans le cadre de ma candidature.
-                {errors.rgpd && <span className="block text-[var(--oz-red)] text-xs mt-1">{errors.rgpd}</span>}
+                {errors.rgpd && <span className="block text-[var(--pilier-secourir)] text-xs mt-1">{errors.rgpd}</span>}
               </span>
             </label>
 
