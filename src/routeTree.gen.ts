@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SoireeRouteImport } from './routes/soiree'
+import { Route as CreateurRouteImport } from './routes/createur'
+import { Route as AmbassadeurRouteImport } from './routes/ambassadeur'
+import { Route as AlephRouteImport } from './routes/aleph'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SoireeRoute = SoireeRouteImport.update({
+  id: '/soiree',
+  path: '/soiree',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreateurRoute = CreateurRouteImport.update({
+  id: '/createur',
+  path: '/createur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmbassadeurRoute = AmbassadeurRouteImport.update({
+  id: '/ambassadeur',
+  path: '/ambassadeur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlephRoute = AlephRouteImport.update({
+  id: '/aleph',
+  path: '/aleph',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,72 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aleph': typeof AlephRoute
+  '/ambassadeur': typeof AmbassadeurRoute
+  '/createur': typeof CreateurRoute
+  '/soiree': typeof SoireeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aleph': typeof AlephRoute
+  '/ambassadeur': typeof AmbassadeurRoute
+  '/createur': typeof CreateurRoute
+  '/soiree': typeof SoireeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aleph': typeof AlephRoute
+  '/ambassadeur': typeof AmbassadeurRoute
+  '/createur': typeof CreateurRoute
+  '/soiree': typeof SoireeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/aleph' | '/ambassadeur' | '/createur' | '/soiree'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/aleph' | '/ambassadeur' | '/createur' | '/soiree'
+  id: '__root__' | '/' | '/aleph' | '/ambassadeur' | '/createur' | '/soiree'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlephRoute: typeof AlephRoute
+  AmbassadeurRoute: typeof AmbassadeurRoute
+  CreateurRoute: typeof CreateurRoute
+  SoireeRoute: typeof SoireeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/soiree': {
+      id: '/soiree'
+      path: '/soiree'
+      fullPath: '/soiree'
+      preLoaderRoute: typeof SoireeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/createur': {
+      id: '/createur'
+      path: '/createur'
+      fullPath: '/createur'
+      preLoaderRoute: typeof CreateurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ambassadeur': {
+      id: '/ambassadeur'
+      path: '/ambassadeur'
+      fullPath: '/ambassadeur'
+      preLoaderRoute: typeof AmbassadeurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aleph': {
+      id: '/aleph'
+      path: '/aleph'
+      fullPath: '/aleph'
+      preLoaderRoute: typeof AlephRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +121,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlephRoute: AlephRoute,
+  AmbassadeurRoute: AmbassadeurRoute,
+  CreateurRoute: CreateurRoute,
+  SoireeRoute: SoireeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
