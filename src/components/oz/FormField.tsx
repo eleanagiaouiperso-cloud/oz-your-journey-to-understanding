@@ -12,11 +12,11 @@ export function Field({ label, required, error, children, hint }: FieldProps) {
   return (
     <div className="mb-4">
       <label className="oz-label">
-        {label} {required && <span className="text-[var(--oz-red)]">*</span>}
+        {label} {required && <span style={{ color: "var(--oz-orange)" }}>*</span>}
       </label>
       {children}
       {hint && !error && <p className="text-xs text-muted-foreground mt-1">{hint}</p>}
-      {error && <p className="text-xs text-[var(--oz-red)] mt-1">{error}</p>}
+      {error && <p className="text-xs mt-1" style={{ color: "var(--pilier-secourir)" }}>{error}</p>}
     </div>
   );
 }
