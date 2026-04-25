@@ -28,7 +28,12 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1.0, user-scalable=no" },
+      { name: "theme-color", content: "#5B1E34" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "Oz" },
       { title: "Oz — Un parcours pour se préparer face à l'antisémitisme" },
       { name: "description", content: "Oz est un parcours d'engagement de 10 mois autour de 4 piliers : Connaître, Transmettre, Secourir, Défendre." },
       { name: "author", content: "Oz — un projet de Moadon" },
