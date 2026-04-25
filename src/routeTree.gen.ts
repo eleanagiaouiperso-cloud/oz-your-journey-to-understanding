@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SoireeRouteImport } from './routes/soiree'
 import { Route as CreateurRouteImport } from './routes/createur'
 import { Route as AmbassadeurRouteImport } from './routes/ambassadeur'
-import { Route as AlephRouteImport } from './routes/aleph'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SoireeRoute = SoireeRouteImport.update({
@@ -30,11 +29,6 @@ const AmbassadeurRoute = AmbassadeurRouteImport.update({
   path: '/ambassadeur',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AlephRoute = AlephRouteImport.update({
-  id: '/aleph',
-  path: '/aleph',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,14 +37,12 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/aleph': typeof AlephRoute
   '/ambassadeur': typeof AmbassadeurRoute
   '/createur': typeof CreateurRoute
   '/soiree': typeof SoireeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/aleph': typeof AlephRoute
   '/ambassadeur': typeof AmbassadeurRoute
   '/createur': typeof CreateurRoute
   '/soiree': typeof SoireeRoute
@@ -58,22 +50,20 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/aleph': typeof AlephRoute
   '/ambassadeur': typeof AmbassadeurRoute
   '/createur': typeof CreateurRoute
   '/soiree': typeof SoireeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/aleph' | '/ambassadeur' | '/createur' | '/soiree'
+  fullPaths: '/' | '/ambassadeur' | '/createur' | '/soiree'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/aleph' | '/ambassadeur' | '/createur' | '/soiree'
-  id: '__root__' | '/' | '/aleph' | '/ambassadeur' | '/createur' | '/soiree'
+  to: '/' | '/ambassadeur' | '/createur' | '/soiree'
+  id: '__root__' | '/' | '/ambassadeur' | '/createur' | '/soiree'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AlephRoute: typeof AlephRoute
   AmbassadeurRoute: typeof AmbassadeurRoute
   CreateurRoute: typeof CreateurRoute
   SoireeRoute: typeof SoireeRoute
@@ -102,13 +92,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AmbassadeurRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/aleph': {
-      id: '/aleph'
-      path: '/aleph'
-      fullPath: '/aleph'
-      preLoaderRoute: typeof AlephRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -121,7 +104,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AlephRoute: AlephRoute,
   AmbassadeurRoute: AmbassadeurRoute,
   CreateurRoute: CreateurRoute,
   SoireeRoute: SoireeRoute,
